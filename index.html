@@ -26,101 +26,111 @@
     <link href="css/aos.css" rel="stylesheet">
 
     <link href="css/templatemo-nomad-force.css" rel="stylesheet">
-</head>
-<style>
-    .slideshowWrapper {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        /* Full height */
-        overflow: hidden;
-    }
-
-    .slideshow {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-
-    .slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0;
-        animation: fadeSlideshow 9s infinite;
-    }
-
-    /* Assign images and delays */
-    .slide:nth-child(1) {
-        background-image: url('neo/4.jpeg');
-        animation-delay: 0s;
-    }
-
-    .slide:nth-child(2) {
-        background-image: url('neo/2.jpeg');
-        animation-delay: 3s;
-    }
-
-    .slide:nth-child(3) {
-        background-image: url('neo/3.jpeg');
-        animation-delay: 6s;
-    }
-
-    .custom-links {
-        display: flex;
-        flex-direction: column;
-        /* Stack links vertically */
-    }
-
-    .custom-link {
-        margin-bottom: 10px;
-        /* Add space between links */
-    }
-
-
-    /* Smooth transition effect */
-    @keyframes fadeSlideshow {
-        0% {
-            opacity: 0;
+    <style>
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Default height for larger screens */
+            overflow: hidden;
         }
-
-        10% {
-            opacity: 1;
+    
+        .heroText {
+            position: relative;
+            z-index: 2;
         }
-
-        30% {
-            opacity: 1;
+    
+        .imageWrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
-
-        40% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 0;
-        }
-    }
-
-    /* 📱 Mobile Optimization */
-    @media (max-width: 768px) {
-        .slide {
-            background-size: contain;
-            /* Prevents image stretching */
-            background-position: center;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .slide {
+    
+        .image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             background-size: cover;
-            /* Ensures full coverage */
             background-position: center;
+            background-repeat: no-repeat;
         }
-    }
-</style>
+    
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3); /* Optional, darkens the background */
+        }
+    
+        /* 📱 Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh; /* Reduced height for mobile devices */
+            }
+    
+            .image {
+                background-size: contain; /* Prevents image stretching */
+                background-position: center;
+                height: 50vh; /* Reduced height for mobile devices */
+            }
+    
+            .heroText h1 {
+                font-size: 1.5rem; /* Adjust font size for smaller screens */
+            }
+    
+            .heroText p {
+                font-size: 1rem; /* Adjust paragraph font size */
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .hero {
+                height: 40vh; /* Even smaller height for very small screens */
+            }
+    
+            .image {
+                background-size: contain;
+                background-position: center;
+                height: 40vh; /* Even smaller height */
+            }
+    
+            .heroText h1 {
+                font-size: 1.2rem; /* Further adjust the font size */
+            }
+    
+            .heroText p {
+                font-size: 0.9rem; /* Adjust paragraph font size */
+            }
+        }
+    
+        /* 💻 Larger Screens Optimization */
+        @media (min-width: 1024px) {
+            .hero {
+                height: 70vh; /* Moderate height for larger screens */
+            }
+    
+            .image {
+                background-size: cover;
+                background-position: center;
+                height: 70vh; /* Keep consistent height for large screens */
+            }
+        }
+    
+        /* 🖥️ Extra Large Screens */
+        @media (min-width: 1200px) {
+            .hero {
+                height: 80vh; /* Larger height for extra large screens */
+            }
+    
+            .image {
+                background-size: cover;
+                background-position: center;
+                height: 80vh; /* Keep consistent height */
+            }
+        }
+    </style>
 
 <body>
 
@@ -137,15 +147,9 @@
                 </p>
             </div>
 
-            <div class="slideshowWrapper">
-                <div class="slideshow">
-                    <div class="slide"></div>
-                    <div class="slide"></div>
-                    <div class="slide"></div>
-                </div>
+            <div class="imageWrapper">
+                <div class="image" style="background-image: url('neo/3.jpeg');"></div>
             </div>
-
-
 
             <div class="overlay"></div>
         </section>
@@ -360,10 +364,12 @@
 
                     <div class="col-lg-6 col-12 mb-5 mb-lg-0">
                         <div class="news-thumb" data-aos="fade-up">
-                            <a href="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing" class="news-image-hover news-image-hover-warning">
+                            <a href="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing"
+                                class="news-image-hover news-image-hover-warning">
                                 <video width="100%" height="auto" muted controls>
-                                    <source src="https://drive.google.com/file/d/1om0qcNc5yo60NrSCMtnB0YniFcgbBVfi/view?usp=sharing" type="video/mp4"
-                                        class="img-fluid large-news-image news-image">
+                                    <source
+                                        src="https://drive.google.com/file/d/1om0qcNc5yo60NrSCMtnB0YniFcgbBVfi/view?usp=sharing"
+                                        type="video/mp4" class="img-fluid large-news-image news-image">
                                     Your browser does not support the video tag.
                                 </video>
                             </a>
@@ -381,11 +387,13 @@
                         <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
                             <div class="news-top w-100">
 
-                                <a href="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing" class="news-image-hover news-image-hover-primary">
+                                <a href="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing"
+                                    class="news-image-hover news-image-hover-primary">
 
                                     <video width="100%" height="auto" muted controls>
-                                        <source src="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing" type="video/mp4"
-                                            class="news-image-hover news-image-hover-primary">
+                                        <source
+                                            src="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing"
+                                            type="video/mp4" class="news-image-hover news-image-hover-primary">
                                         Your browser does not support the video tag.
                                     </video>
                                 </a>
@@ -405,9 +413,12 @@
                         <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
                             <div class="news-top w-100" data-aos="fade-up">
 
-                                <a href="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing" class="news-image-hover news-image-hover-success">
+                                <a href="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                    class="news-image-hover news-image-hover-success">
                                     <video width="100%" height="auto" muted controls>
-                                        <source src="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing" type="video/mp4" class="img-fluid news-image">
+                                        <source
+                                            src="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                            type="video/mp4" class="img-fluid news-image">
                                         Your browser does not support the video tag.
                                     </video>
                                 </a>
