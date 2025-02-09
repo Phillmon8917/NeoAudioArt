@@ -27,123 +27,201 @@
 
     <link href="css/templatemo-nomad-force.css" rel="stylesheet">
     <style>
+        /* Hero Section */
         .hero {
             position: relative;
-            width: 100%;
-            height: 100vh; /* Default height for larger screens */
-            overflow: hidden;
+            z-index: 1;
+            /* Ensures hero section is not hidden behind the navbar */
         }
-    
+
+        /* Hamburger Icon - positioned top right */
+        .navbar-toggler {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+            /* Ensures the icon is above other content */
+        }
+
+        /* Navbar links */
+        .navbar-nav {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            /* Center the links */
+        }
+
+        .navbar-nav .nav-item {
+            padding: 10px 15px;
+        }
+
+        /* Navigation items - active and hover states */
+        .nav-item.active .nav-link {
+            color: #ffffff;
+        }
+
+        .nav-item .nav-link {
+            color: #999999;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item .nav-link:hover,
+        .nav-item .nav-link:focus {
+            color: #ffffff;
+        }
+
+        /* Remove the default white background from the collapsed navbar */
+        .collapse.navbar-collapse {
+            background-color: transparent !important;
+            /* No background when collapsed */
+        }
+
+        /* Ensure the menu doesn't have the white background */
+        .navbar-collapse.show {
+            background-color: transparent !important;
+            /* No background when shown */
+        }
+
+        /* Hero Text */
         .heroText {
-            position: relative;
-            z-index: 2;
+            text-align: center;
+            padding: 50px 0;
+            transition: margin-top 0.3s ease;
+            /* Smooth transition */
         }
-    
-        /* Bold text for heading and paragraph */
-        .heroText h1,
+
+        .heroText h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+        }
+
         .heroText p {
-            font-weight: bold; /* Make text bold */
+            color: #d3d3d3;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            /* Added space above the text */
+            opacity: 0;
+            /* Start hidden */
+            transition: opacity 1s ease-out;
+            /* Smooth fade-in effect */
         }
-    
+
+        /* Custom underline class */
+        .custom-underline {
+            text-decoration: underline;
+            color: #f7a500;
+            /* Underline color (for example, gold) */
+        }
+
+        /* Image Wrapper */
         .imageWrapper {
             position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
         }
-    
-        .image {
-            position: absolute;
+
+        .imageWrapper .image {
             width: 100%;
-            height: 100%;
+            height: 100vh;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
         }
-    
+
+        /* Overlay */
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3); /* Optional, darkens the background */
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent overlay */
+            z-index: 0;
+            /* Ensures overlay is behind text */
         }
-    
-        /* 📱 Mobile Optimization */
+
+        /* For mobile responsiveness */
         @media (max-width: 768px) {
-            .hero {
-                height: 50vh; /* Reduced height for mobile devices */
+            .navbar-nav {
+                text-align: center;
+                margin-top: 10px;
             }
-    
-            .image {
-                background-size: contain; /* Prevents image stretching */
-                background-position: center;
-                height: 50vh; /* Reduced height for mobile devices */
-            }
-    
+
             .heroText h1 {
-                font-size: 1.5rem; /* Adjust font size for smaller screens */
+                font-size: 2.5rem;
+                padding: 0 10px;
+                /* Add padding for mobile */
             }
-    
+
             .heroText p {
-                font-size: 1rem; /* Adjust paragraph font size */
+                font-size: 1.1rem;
+                margin-top: 15px;
+                /* Slightly smaller margin */
+                opacity: 1 !important;
+                animation-delay: 1.2s !important;
+                /* Ensure it's visible */
             }
-        }
-    
-        @media (max-width: 480px) {
-            .hero {
-                height: 40vh; /* Even smaller height for very small screens */
+
+            .heroText {
+                padding: 20px 0;
             }
-    
-            .image {
-                background-size: contain;
-                background-position: center;
-                height: 40vh; /* Even smaller height */
-            }
-    
-            .heroText h1 {
-                font-size: 1.2rem; /* Further adjust the font size */
-            }
-    
+
+            .heroText h1,
             .heroText p {
-                font-size: 0.9rem; /* Adjust paragraph font size */
+                max-width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* For smooth opening of navigation on mobile */
+            .navbar-collapse {
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* Additional padding adjustments to prevent text from colliding */
+            .navbar-nav .nav-item {
+                padding: 15px 10px;
             }
         }
-    
-        /* 💻 Larger Screens Optimization */
-        @media (min-width: 1024px) {
-            .hero {
-                height: 70vh; /* Moderate height for larger screens */
-            }
-    
-            .image {
-                background-size: cover;
-                background-position: center;
-                height: 70vh; /* Keep consistent height for large screens */
-            }
-        }
-    
-        /* 🖥️ Extra Large Screens */
-        @media (min-width: 1200px) {
-            .hero {
-                height: 80vh; /* Larger height for extra large screens */
-            }
-    
-            .image {
-                background-size: cover;
-                background-position: center;
-                height: 80vh; /* Keep consistent height */
-            }
+
+        /* AOS fade-up animation override (if necessary) */
+        [data-aos="fade-up"] {
+            animation-duration: 1s !important;
+            animation-delay: 1.2s !important;
+            animation-timing-function: ease-out !important;
         }
     </style>
-    
 
 <body>
 
     <main>
-
         <section class="hero" id="hero">
+            <!-- Hamburger icon for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">My Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">Movie Snipets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact me</a>
+                    </li>
+                </ul>
+            </div>
+
             <div class="heroText">
                 <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
                     Neo Audio Art
@@ -166,36 +244,6 @@
                 <a class="navbar-brand" href="index.html">
                     <strong>Neo Audio Art</strong>
                 </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#hero">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">My Work</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#news">Movie Snipets</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact me</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </nav>
 
         <section class="section-padding pb-0" id="about">
@@ -594,7 +642,13 @@
     <script src="js/magnific-popup-options.js"></script>
     <script src="js/scrollspy.min.js"></script>
     <script src="js/custom.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts for AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init();
+    </script>
 </body>
 
 </html>
