@@ -26,27 +26,29 @@
     <link href="css/aos.css" rel="stylesheet">
 
     <link href="css/templatemo-nomad-force.css" rel="stylesheet">
-    
+
     <style>
         /* Hero Section */
         .hero {
             position: relative;
             z-index: 1;
-            height: 60vh; /* Reduced height for mobile */
+            height: 70vh;
+            /* Slightly reduced height for mobile */
             padding-top: 30px;
             padding-bottom: 30px;
-            background-size: cover; /* Ensure image covers the area */
-            background-position: center center; /* Center the background image */
+            background-size: cover;
+            background-position: center center;
         }
-    
+
         /* Hamburger Icon - positioned top right */
         .navbar-toggler {
             position: absolute;
             top: 20px;
             right: 20px;
             z-index: 1050;
+            /* Ensure it's above the navbar and other elements */
         }
-    
+
         /* Navbar links */
         .navbar-nav {
             margin-left: auto;
@@ -54,34 +56,39 @@
             text-align: center;
             position: relative;
             z-index: 1100;
+            /* Ensure navbar items are above everything */
         }
-    
+
         .navbar-nav .nav-item {
-            padding: 8px 15px; /* Reduced padding for better fit */
+            padding: 8px 15px;
         }
-    
+
         .nav-item.active .nav-link {
             color: #ffffff;
         }
-    
+
         .nav-item .nav-link {
             color: #999999;
             transition: color 0.3s ease;
         }
-    
+
         .nav-item .nav-link:hover,
         .nav-item .nav-link:focus {
             color: #ffffff;
         }
-    
+
         .collapse.navbar-collapse {
             background-color: transparent !important;
+            z-index: 999;
+            /* Set lower z-index to prevent covering the navbar toggle */
         }
-    
+
         .navbar-collapse.show {
             background-color: transparent !important;
+            z-index: 9999;
+            /* Ensure the menu shows on top of the content */
         }
-    
+
         /* Hero Text */
         .heroText {
             text-align: center;
@@ -89,14 +96,14 @@
             position: relative;
             z-index: 100;
         }
-    
+
         .heroText h1 {
             font-size: 3rem;
             font-weight: bold;
             color: white;
             margin-bottom: 20px;
         }
-    
+
         .heroText p {
             color: #d3d3d3;
             font-size: 1.2rem;
@@ -105,23 +112,23 @@
             transition: opacity 1s ease-out, transform 1s ease-out;
             transform: translateX(-100%);
         }
-    
+
         .custom-underline {
             text-decoration: underline;
             color: #f7a500;
         }
-    
+
         .imageWrapper {
             position: relative;
         }
-    
+
         .imageWrapper .image {
             width: 100%;
             height: 100vh;
             background-size: cover;
-            background-position: center center; /* Ensure image is centered */
+            background-position: center center;
         }
-    
+
         .overlay {
             position: absolute;
             top: 0;
@@ -131,93 +138,131 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
-    
+
+        /* Ensure navbar toggle and items are clickable */
+        .navbar-toggler {
+            z-index: 1101 !important;
+            /* Make sure the toggle is always on top */
+        }
+
+        .navbar-collapse {
+            z-index: 1100 !important;
+            /* Ensure dropdown menu is above content */
+        }
+
+        /* Ensure hero section does not block clicks */
+        .hero {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Fix overlay blocking interactions */
+        .overlay {
+            pointer-events: none;
+            /* Allow clicks to go through the overlay */
+        }
+
+        .navbar-collapse {
+            display: none;
+            /* Hide by default */
+        }
+
+        .navbar-collapse.show {
+            display: block;
+            /* Show when active */
+        }
+
+
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
-                padding-top: 30px;
-                padding-bottom: 30px;
+                /* Adjusted height for mobile */
+                padding-top: 25px;
+                padding-bottom: 25px;
             }
-    
+
             .navbar-nav {
                 display: flex;
                 flex-direction: column;
                 margin-top: 10px;
                 padding: 10px 0;
             }
-    
+
             .navbar-nav .nav-item {
                 padding: 12px 0;
                 font-size: 1rem;
             }
-    
+
             .heroText h1 {
                 font-size: 2.5rem;
             }
-    
+
             .heroText p {
                 font-size: 1.1rem;
                 margin-top: 15px;
                 opacity: 1 !important;
                 transform: translateX(0%);
             }
-    
+
             .heroText {
                 padding: 20px 0;
             }
-    
+
             .heroText h1,
             .heroText p {
                 max-width: 90%;
                 margin-left: auto;
                 margin-right: auto;
             }
-    
+
             .imageWrapper .image {
                 height: 40vh;
             }
-    
+
             .navbar-collapse {
-                max-height: 80vh; /* Limit height for dropdown */
+                max-height: 80vh;
+                /* Limit height for dropdown */
                 overflow-y: auto;
             }
-    
+
             .navbar-nav .nav-item {
                 padding: 10px 20px;
             }
-    
+
             .navbar-nav .nav-item .nav-link {
                 font-size: 1rem;
             }
-    
+
             .navbar-nav .nav-item a {
                 display: inline-block;
                 text-align: center;
             }
-    
+
             /* Fix for closing navbar toggle on mobile */
             .navbar-toggler {
                 z-index: 1051;
+                /* Ensure toggle button is above everything */
             }
-    
+
             .navbar-collapse {
                 z-index: 1100;
+                /* Ensure dropdown menu is above other elements */
             }
-    
+
             /* Ensure the menu appears on mobile */
             .collapse.navbar-collapse.show {
                 display: block;
             }
         }
-    
+
         /* AOS fade-up animation override */
         [data-aos="fade-up"] {
             animation-duration: 1s !important;
             animation-delay: 1.2s !important;
             animation-timing-function: ease-out !important;
         }
-    
+
         /* Prevent text from disappearing */
         .heroText p {
             opacity: 1 !important;
@@ -225,19 +270,19 @@
             animation-fill-mode: forwards;
         }
     </style>
-    
+
 <body>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero" id="hero">
             <!-- Hamburger icon for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" id="menu-icon" type="button" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- Navigation items -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#hero">Home</a>
@@ -249,10 +294,10 @@
                         <a class="nav-link" href="#portfolio">My Work</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#news">Movie Snipets</a>
+                        <a class="nav-link" href="#news">Movie Snippets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact me</a>
+                        <a class="nav-link" href="#contact">Contact Me</a>
                     </li>
                 </ul>
             </div>
@@ -263,7 +308,7 @@
                 </h1>
 
                 <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
-                    <strong class="custom-underline"><b>Bringing cinematic Sounds To Life</b></strong>
+                    <strong class="custom-underline"><b>Bringing Cinematic Sounds To Life</b></strong>
                 </p>
             </div>
 
@@ -279,8 +324,17 @@
                 <a class="navbar-brand" href="index.html">
                     <strong>Neo Audio Art</strong>
                 </a>
+            </div>
         </nav>
 
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <strong>Neo Audio Art</strong>
+                </a>
+            </div>
+        </nav>
         <section class="section-padding pb-0" id="about">
             <div class="container mb-5 pb-lg-5">
                 <div class="row">
@@ -680,30 +734,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Scripts for AOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- JavaScript -->
     <script>
-        // Get the necessary DOM elements
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    
-        // Toggle the navbar when the menu button is clicked
-        navbarToggler.addEventListener('click', () => {
-            navbarCollapse.classList.toggle('show');
-        });
-    
-        // Close the navbar when a link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navbarCollapse.classList.remove('show');
+        $(document).ready(function () {
+            var $menuIcon = $('#menu-icon');
+            var $navMenu = $('#navbarNav');
+
+            $menuIcon.click(function () {
+                if ($navMenu.hasClass('show')) {
+                    $navMenu.removeClass('show');
+                } else {
+                    $navMenu.addClass('show');
+                }
+            });
+
+            $(".nav-link").click(function () {
+                $navMenu.removeClass("show");
             });
         });
-    
-        // Close the navbar if you click outside of it (for mobile)
-        document.addEventListener('click', (event) => {
-            if (!navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
-                navbarCollapse.classList.remove('show');
-            }
-        });
+
     </script>
 </body>
 
