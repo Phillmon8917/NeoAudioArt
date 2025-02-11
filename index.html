@@ -269,6 +269,54 @@
             transform: translateX(0) !important;
             animation-fill-mode: forwards;
         }
+
+        /* Ensure all media (videos and images) have the same size */
+        .news-thumb {
+            width: 100%;
+            height: 250px;
+            /* Reduced height for all media */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 15px;
+            /* Space between each box */
+        }
+
+        .news-thumb video,
+        .news-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures the media scales properly */
+        }
+
+        /* Optional: Adjust the layout for the images/videos in smaller screens */
+        .news-two-column {
+            margin-bottom: 15px;
+        }
+
+        /* Optional: Adjust the hover effect styles */
+        .news-image-hover {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .news-image-hover-success {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .news-image-hover-warning {
+            background: rgba(255, 255, 0, 0.3);
+        }
+
+        /* Optional: Add a margin for the columns */
+        .news-thumb+.news-thumb {
+            margin-top: 15px;
+            /* Space between video/image blocks */
+        }
     </style>
 
 <body>
@@ -288,13 +336,13 @@
                         <a class="nav-link" href="#hero">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">services</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">My Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#news">Movie Snippets</a>
+                        <a class="nav-link" href="#news">Credits</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact Me</a>
@@ -307,8 +355,8 @@
                     Neo Audio Art
                 </h1>
 
-                <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
-                    <strong class="custom-underline"><b>Bringing Cinematic Sounds To Life</b></strong>
+                <p class="text-white" data-aos="fade-up" data-aos-delay="1000">
+                    <strong><b class="text-white custom-underline">Bringing Cinematic Sounds To Life</b></strong>
                 </p>
             </div>
 
@@ -319,120 +367,96 @@
             <div class="overlay"></div>
         </section>
 
-        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg" style="position: absolute; width: 100%;">
+            <div class="container d-flex justify-content-center">
+                <a class="navbar-brand text-center mx-auto" href="index.html">
                     <strong>Neo Audio Art</strong>
                 </a>
             </div>
         </nav>
 
-
-        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <strong>Neo Audio Art</strong>
-                </a>
-            </div>
-        </nav>
-        <section class="section-padding pb-0" id="about">
-            <div class="container mb-5 pb-lg-5">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="mb-3" data-aos="fade-up">About Neo Audio Arts..</h2>
-                    </div>
-
-                    <div class="col-lg-6 col-12 mt-3 mb-lg-5">
-                        <p class="me-4" data-aos="fade-up" data-aos-delay="300">Bringing cinematic sound to life is my
-                            passion.
-                            I specialize in dialogue editing to remove unwanted noise, correct sync issues, and enhance
-                            clarity.
-                            Every word is polished for a professional and immersive experience.</p>
-                    </div>
-
-                    <div class="col-lg-6 col-12 mt-lg-3 mb-lg-5">
-                        <p data-aos="fade-up" data-aos-delay="500">I create soundscapes and music that elevate
-                            storytelling.
-                            From designing sound effects to composing original scores,
-                            I ensure every scene has the right tone and emotion.
-                            My work enhances visuals with rich, engaging audio.</p>
-                    </div>
-
-                    <div class="col-lg-6 col-12 mt-lg-3 mb-lg-5">
-                        <p data-aos="fade-up" data-aos-delay="500">
-                            Through final mixing, I balance sound elements for a cohesive and high-quality result.
-                            I adjust levels, EQ, and compression to ensure your film sounds great on any platform.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3 col-12 p-0">
-                        <img src="neo/6.jpeg" class="img-fluid about-image" alt="">
-                    </div>
-
-                    <div class="col-lg-3 col-12 bg-dark">
-                        <div
-                            class="d-flex flex-column flex-wrap justify-content-center h-100 py-5 px-4 pt-lg-4 pb-lg-0">
-                            <h3 class="text-white mb-3" data-aos="fade-up">We're passionate about visual storytelling.
-                            </h3>
-
-                            <p class="text-secondary-white-color" data-aos="fade-up">With over six years of experience,
-                                crafting stories frame by frame</p>
-
-                            <div class="mt-3 custom-links">
-
-                                <a href="#news" class="text-white custom-link" data-aos="zoom-in"
-                                    data-aos-delay="100">Movie Snipets</a>
-
-                                <a href="#contact" class="text-white custom-link" data-aos="zoom-in"
-                                    data-aos-delay="300">Contact Me
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-12 p-0" width="80%" stye="position: fixed;">
-                        <section id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="neo/2.jpeg" class="img-fluid team-image" alt="" width="80px">
-
-                                    <div class="team-thumb bg-warning">
-                                    </div>
-                                </div>
-
-                            </div>
-                    </div>
-
-
-        </section>
-
+        <div class="intro">
+            <p>
+            <h6 class="p-2" style="font-style: italic;"> Bringing Cinematic Sound to Life.</h6>
+            <p> As a dedicated audio professional,
+                I help filmmakers bring their creative vision to life. With expertise
+                in:</p>
+            </p>
         </div>
-        </div>
-        </div>
-        </section>
-
         <section class="section-padding" id="portfolio">
             <div class="container">
                 <div class="row">
 
                     <div class="col-12">
-                        <h2 class="mb-5 text-center" data-aos="fade-up">My work</h2>
+                        <h2 class="mb-5 text-center" data-aos="fade-up"></h2>
+                    </div>
+
+                    <div class="portfolio-thumb" data-aos="fade-up">
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0 text-center">Dialogue Editing</h4>
+
+                            <a href="neo/4.jpeg" class="image-popup p-3">
+                                <img src="neo/4.jpeg" class="img-fluid portfolio-image" alt="">
+                            </a>
+
+                            <ul>
+                                <li>Remove unwanted noises and breaths</li>
+                                <li>Correct sync issues and lip movements</li>
+                                <li>Enhance clarity</li>
+                                <li>Create a polished, professional dialogue sound</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-6 col-12">
+                    <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0 text-center">Sound Design</h4>
+
+                            <a href="neo/5.jpeg" class="image-popup p-3">
+                                <img src="neo/5.jpeg" class="img-fluid portfolio-image" alt="">
+                            </a>
+
+                            <ul>
+                                <li>Create immersive soundscapes and atmospheres</li>
+                                <li>Design and edit sound effects to enhance visuals</li>
+                                <li>Craft realistic Foley effects for added authenticity</li>
+                                <li>Mix and balance sound elements for a cohesive experience</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-thumb" data-aos="fade-up">
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0 text-center">Music Composition</h4>
+
+                            <a href="neo/7.jpeg" class="image-popup p-3">
+                                <img src="neo/7.jpeg" class="img-fluid portfolio-image" alt="">
+                            </a>
+
+                            <ul>
+                                <li>Craft original music scores to elevate your narrative</li>
+                                <li>Create emotive and engaging themes</li>
+                                <li>Arrange and produce music to fit your film's tone and style</li>
+                                <li>Deliver high-quality music that's ready for your film</li>
+                            </ul>
+                        </div>
+
                     </div>
 
                     <div class="col-lg-6 col-12">
                         <div class="portfolio-thumb mb-5" data-aos="fade-up">
-                            <a href="neo/2.jpeg" class="image-popup">
-                                <img src="neo/2.jpeg" class="img-fluid portfolio-image" alt="">
-                            </a>
-
                             <div class="portfolio-info">
+                                <h4 class="portfolio-title mb-0 text-center">Final mixing</h4>
+
+                                <a href="neo/2.jpeg" class="image-popup p-3">
+                                    <img src="neo/2.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+
                                 <ul>
-                                    <h4 class="portfolio-title mb-0">Final mixing</h4>
                                     <li>Balance audio elements for a cohesive mix</li>
                                     <li>Adjust levels, EQ, and compression for optimal sound</li>
                                     <li>Create a polished, professional final product</li>
@@ -440,156 +464,128 @@
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="portfolio-thumb" data-aos="fade-up">
-                            <a href="neo/4.jpeg" class="image-popup">
-                                <img src="neo/4.jpeg" class="img-fluid portfolio-image" alt="">
-                            </a>
-
-                            <div class="portfolio-info">
-                                <ul>
-                                    <h4 class="portfolio-title mb-0">Dialogue Editing</h4>
-                                    <li>Remove unwanted noises and breaths</li>
-                                    <li>Correct sync issues and lip movements</li>
-                                    <li>Enhance clarity</li>
-                                    <li>Create a polished, professional dialogue sound</li>
-                                </ul>
-
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="col-lg-6 col-12">
-                        <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
-                            <a href="neo/5.jpeg" class="image-popup">
-                                <img src="neo/5.jpeg" class="img-fluid portfolio-image" alt="">
-                            </a>
-
-                            <div class="portfolio-info">
-                                <ul>
-                                    <h4 class="portfolio-title mb-0">Sound Design</h4>
-                                    <li>Create immersive soundscapes and atmospheres</li>
-                                    <li>Design and edit sound effects to enhance visuals</li>
-                                    <li>Craft realistic Foley effects for added authenticity</li>
-                                    <li>Mix and balance sound elements for a cohesive experience</li>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-thumb" data-aos="fade-up">
-                            <a href="neo/7.jpeg" class="image-popup">
-                                <img src="neo/7.jpeg" class="img-fluid portfolio-image" alt="">
-                            </a>
-
-                            <div class="portfolio-info">
-                                <ul>
-                                    <h4 class="portfolio-title mb-0">Music Composition</h4>
-                                    <li>Craft original music scores to elevate your narrative</li>
-                                    <li>Create emotive and engaging themes</li>
-                                    <li>Arrange and produce music to fit your film's tone and style</li>
-                                    <li>Deliver high-quality music that's ready for your film</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <p>I ensure that your time , hard work and energy result in the film you envision.</p>
 
                 </div>
             </div>
         </section>
 
-        <section class="news section-padding" id="news">
-            <div class="container">
+        <section class="section-padding pb-0" id="about">
+            <div class="container mb-5 pb-lg-5">
                 <div class="row">
-
                     <div class="col-12">
-                        <h2 class="mb-5 text-center" data-aos="fade-up">Movie Snipets</h2>
+                        <h2 class="mb-3" data-aos="fade-up">About Neo Audio Art..</h2>
                     </div>
 
-                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                        <div class="news-thumb" data-aos="fade-up">
-                            <a href="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing"
-                                class="news-image-hover news-image-hover-warning">
-                                <video width="100%" height="auto" muted controls>
-                                    <source
-                                        src="https://drive.google.com/file/d/1om0qcNc5yo60NrSCMtnB0YniFcgbBVfi/view?usp=sharing"
-                                        type="video/mp4" class="img-fluid large-news-image news-image">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-
-                            <div class="news-text-info">
-                                <h5 class="news-title">
-                                    <a href="news-detail.html" class="news-title-link">Precision-crafted audio and video
-                                        for a truly immersive experience.</a>
-                                </h5>
-                            </div>
-                        </div>
+                    <div class="col-lg-6 col-12 mt-3 mb-lg-5">
+                        <p class="me-4" data-aos="fade-up" data-aos-delay="300">
+                            As a Sound Engineer, Music Composer, and Filmmaker, Neo has been perfecting his craft since
+                            2013. He began his journey with music composition, followed by formal studies in Sound
+                            Engineering and Music Production at Southwest Media College. Neo's professional experience
+                            includes working as a Technical Assistant Producer at Radio Turf, University of Limpopo.
+                            He later pursued an NQF5 qualification in Film and TV Production at Bolobathaba Media Group,
+                            where he gained extensive experience in Audio Post-Production.
+                            Neo's impressive portfolio includes work on documentaries such as "Always & Otherwise",
+                            "Street Snappers", "Hung Out Dry", "Six Kings and Six Queens", and various other
+                            documentaries and short films.
+                        </p>
                     </div>
 
-                    <div class="col-lg-6 col-12">
-                        <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
-                            <div class="news-top w-100">
+                    <section class="news section-padding" id="news">
+                        <div class="container">
+                            <div class="row">
 
-                                <a href="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing"
-                                    class="news-image-hover news-image-hover-primary">
-
-                                    <video width="100%" height="auto" muted controls>
-                                        <source
-                                            src="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing"
-                                            type="video/mp4" class="news-image-hover news-image-hover-primary">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </a>
-
-                            </div>
-
-                            <div class="news-bottom w-100">
-                                <div class="news-text-info">
-                                    <h5 class="news-title">
-                                        <a href="#" class="news-title-link">Elevating visuals and sound to the highest
-                                            quality standards.</a>
-                                    </h5>
+                                <div class="col-12">
+                                    <h2 class="mb-5 text-center" data-aos="fade-up">Credits</h2>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
-                            <div class="news-top w-100" data-aos="fade-up">
-
-                                <a href="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
-                                    class="news-image-hover news-image-hover-success">
-                                    <video width="100%" height="auto" muted controls>
-                                        <source
-                                            src="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
-                                            type="video/mp4" class="img-fluid news-image">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </a>
-                            </div>
-
-                            <div class="news-bottom w-100">
-                                <div class="news-text-info">
-                                    <h5 class="news-title">
-                                        <a href="news-detail.html" class="news-title-link">Delivering unmatched video
-                                            and audio excellence in every project.</a>
-                                    </h5>
+                                <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                                    <div class="news-thumb" data-aos="fade-up">
+                                        <a href="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing"
+                                            class="news-image-hover news-image-hover-warning">
+                                            <video muted controls>
+                                                <source
+                                                    src="https://drive.google.com/file/d/1om0qcNc5yo60NrSCMtnB0YniFcgbBVfi/view?usp=sharing"
+                                                    type="video/mp4" class="img-fluid large-news-image news-image">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </a>
+                                    </div>
+                                    <div class="news-top w-100" data-aos="fade-up">
+                                        <a href="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                            class="news-image-hover news-image-hover-success">
+                                            <video muted controls style="width: 100%; height: auto;">
+                                                <source
+                                                    src="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                                    type="video/mp4" class="img-fluid news-image">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </a>
+                                    </div>
                                 </div>
+
+                                <!-- Other videos/images remain unchanged -->
+                                <div class="news-thumb news-two-column d-flex flex-column flex-lg-row"
+                                    data-aos="fade-up">
+                                    <div class="news-top w-100" data-aos="fade-up">
+                                        <a href="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                            class="news-image-hover news-image-hover-success">
+                                            <video muted controls style="width: 100%; height: auto;">
+                                                <source
+                                                    src="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                                    type="video/mp4" class="img-fluid news-image">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Image boxes remain unchanged -->
+                                <div class="news-thumb news-two-column d-flex flex-column flex-lg-row"
+                                    data-aos="fade-up">
+                                    <div class="news-top w-100" data-aos="fade-up">
+                                        <a href="#" class="news-image-hover news-image-hover-success">
+                                            <img class="img-fluid news-image" src="neo/6.jpeg" />
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="news-thumb news-two-column d-flex flex-column flex-lg-row"
+                                    data-aos="fade-up">
+                                    <div class="news-top w-100" data-aos="fade-up">
+                                        <a href="#" class="news-image-hover news-image-hover-success">
+                                            <img class="img-fluid news-image" src="neo/8.jpeg" />
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="news-thumb news-two-column d-flex flex-column flex-lg-row"
+                                    data-aos="fade-up">
+                                    <div class="news-top w-100" data-aos="fade-up">
+                                        <a href="#" class="news-image-hover news-image-hover-success">
+                                            <img class="img-fluid news-image" src="neo/9.jpeg" />
+                                        </a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
+                    </section>
+
 
                 </div>
             </div>
         </section>
-
         <section class=" contact section-padding" id="contact">
             <div class="container">
                 <div class="row">
 
                     <div class="col-lg-7 col-12 mx-auto">
 
-                        <h2 class="mb-4 text-center" data-aos="fade-up">Got a project in mind? Let's talk!</h2>
+                        <h2 class="mb-4 text-center" data-aos="fade-up">Got a project in mind? Let's talk!
+                        </h2>
 
                         <form action="sendMeesage.php" method="post" class="contact-form" role="form"
                             data-aos="fade-up">
@@ -614,7 +610,7 @@
                                     <label for="message" class="form-label">How can I help?</label>
 
                                     <textarea name="message" rows="6" class="form-control" id="message"
-                                        placeholder="Tell us about the project" required></textarea>
+                                        placeholder="Brief description of the project" required></textarea>
 
                                 </div>
 
@@ -627,7 +623,8 @@
                                     <div class="form-check">
                                         <input type="checkbox" id="checkbox1" name="checkbox1" class="form-check-input">
 
-                                        <label class="form-check-label" for="checkbox1">Dialogue Editing</label>
+                                        <label class="form-check-label" for="checkbox1">Dialogue
+                                            Editing</label>
                                     </div>
                                 </div>
 
@@ -643,7 +640,8 @@
                                     <div class="form-check">
                                         <input type="checkbox" id="checkbox3" name="checkbox3" class="form-check-input">
 
-                                        <label class="form-check-label" for="checkbox3">Music Composition</label>
+                                        <label class="form-check-label" for="checkbox3">Music
+                                            Composition</label>
                                     </div>
                                 </div>
 
