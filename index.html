@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Neo Rapudubudu">
+    <meta name="Developer" content="Motsinoni Phillimon">
 
     <title>Neo Audio Art</title>
 
@@ -26,109 +27,64 @@
     <link href="css/aos.css" rel="stylesheet">
 
     <link href="css/templatemo-nomad-force.css" rel="stylesheet">
-
     <style>
-        /* Hero Section */
+        /* General Hero Section Styling */
         .hero {
             position: relative;
             z-index: 1;
-            height: 70vh;
-            /* Slightly reduced height for mobile */
-            padding-top: 30px;
-            padding-bottom: 30px;
-            background-size: cover;
-            background-position: center center;
-        }
-
-        /* Hamburger Icon - positioned top right */
-        .navbar-toggler {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1050;
-            /* Ensure it's above the navbar and other elements */
-        }
-
-        /* Navbar links */
-        .navbar-nav {
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            position: relative;
-            z-index: 1100;
-            /* Ensure navbar items are above everything */
-        }
-
-        .navbar-nav .nav-item {
-            padding: 8px 15px;
-        }
-
-        .nav-item.active .nav-link {
-            color: #ffffff;
-        }
-
-        .nav-item .nav-link {
-            color: #999999;
-            transition: color 0.3s ease;
-        }
-
-        .nav-item .nav-link:hover,
-        .nav-item .nav-link:focus {
-            color: #ffffff;
-        }
-
-        .collapse.navbar-collapse {
-            background-color: transparent !important;
-            z-index: 999;
-            /* Set lower z-index to prevent covering the navbar toggle */
-        }
-
-        .navbar-collapse.show {
-            background-color: transparent !important;
-            z-index: 9999;
-            /* Ensure the menu shows on top of the content */
-        }
-
-        /* Hero Text */
-        .heroText {
-            text-align: center;
-            padding: 50px 0;
-            position: relative;
-            z-index: 100;
-        }
-
-        .heroText h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .heroText p {
-            color: #d3d3d3;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            opacity: 0;
-            transition: opacity 1s ease-out, transform 1s ease-out;
-            transform: translateX(-100%);
-        }
-
-        .custom-underline {
-            text-decoration: underline;
-            color: #f7a500;
-        }
-
-        .imageWrapper {
-            position: relative;
-        }
-
-        .imageWrapper .image {
-            width: 100%;
             height: 100vh;
             background-size: cover;
             background-position: center center;
+            transition: background-color 0.3s ease;
         }
 
+        /* Center the text vertically and horizontally */
+        .heroText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Styling for the h1 text */
+        .heroText h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the paragraph text */
+        .heroText p {
+            color: #d3d3d3;
+            font-size: 1.2rem;
+            opacity: 1;
+        }
+
+        /* Hero Background Image Styling */
+        .imageWrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .imageWrapper video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Overlay Styling */
         .overlay {
             position: absolute;
             top: 0;
@@ -137,61 +93,57 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 0;
-        }
-
-        /* Ensure navbar toggle and items are clickable */
-        .navbar-toggler {
-            z-index: 1101 !important;
-            /* Make sure the toggle is always on top */
-        }
-
-        .navbar-collapse {
-            z-index: 1100 !important;
-            /* Ensure dropdown menu is above content */
-        }
-
-        /* Ensure hero section does not block clicks */
-        .hero {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Fix overlay blocking interactions */
-        .overlay {
+            /* Ensuring overlay stays behind text and navbar */
             pointer-events: none;
-            /* Allow clicks to go through the overlay */
+        }
+
+        /* Navbar Styles */
+        .navbar-toggler {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1101;
         }
 
         .navbar-collapse {
+            z-index: 1100;
             display: none;
-            /* Hide by default */
         }
 
         .navbar-collapse.show {
             display: block;
-            /* Show when active */
         }
 
+        /* Navbar Link Styling */
+        .navbar-nav {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            position: relative;
+            z-index: 1100;
+        }
 
-        /* Mobile Responsiveness */
+        .nav-item.active .nav-link {
+            color: #ffffff;
+        }
+
+        .nav-item .nav-link {
+            color: #999999;
+            background: transparent;
+            /* Ensuring navbar link background is transparent */
+            padding: 10px 20px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-item .nav-link:hover,
+        .nav-item .nav-link:focus {
+            color: #ffffff;
+        }
+
+        /* Media Query for smaller screens */
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
-                /* Adjusted height for mobile */
-                padding-top: 25px;
-                padding-bottom: 25px;
-            }
-
-            .navbar-nav {
-                display: flex;
-                flex-direction: column;
-                margin-top: 10px;
-                padding: 10px 0;
-            }
-
-            .navbar-nav .nav-item {
-                padding: 12px 0;
-                font-size: 1rem;
             }
 
             .heroText h1 {
@@ -200,127 +152,22 @@
 
             .heroText p {
                 font-size: 1.1rem;
-                margin-top: 15px;
-                opacity: 1 !important;
-                transform: translateX(0%);
             }
 
-            .heroText {
-                padding: 20px 0;
-            }
-
-            .heroText h1,
-            .heroText p {
-                max-width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .imageWrapper .image {
-                height: 40vh;
-            }
-
-            .navbar-collapse {
-                max-height: 80vh;
-                /* Limit height for dropdown */
-                overflow-y: auto;
-            }
-
-            .navbar-nav .nav-item {
-                padding: 10px 20px;
-            }
-
-            .navbar-nav .nav-item .nav-link {
-                font-size: 1rem;
-            }
-
-            .navbar-nav .nav-item a {
-                display: inline-block;
-                text-align: center;
-            }
-
-            /* Fix for closing navbar toggle on mobile */
-            .navbar-toggler {
-                z-index: 1051;
-                /* Ensure toggle button is above everything */
-            }
-
-            .navbar-collapse {
-                z-index: 1100;
-                /* Ensure dropdown menu is above other elements */
-            }
-
-            /* Ensure the menu appears on mobile */
-            .collapse.navbar-collapse.show {
-                display: block;
+            .imageWrapper video {
+                height: 100vh;
             }
         }
 
-        /* AOS fade-up animation override */
-        [data-aos="fade-up"] {
-            animation-duration: 1s !important;
-            animation-delay: 1.2s !important;
-            animation-timing-function: ease-out !important;
+        /* Fix for when menu is open: Hide hero text */
+        .hero.no-background .heroText {
+            opacity: 0;
         }
 
-        /* Prevent text from disappearing */
-        .heroText p {
-            opacity: 1 !important;
-            transform: translateX(0) !important;
-            animation-fill-mode: forwards;
-        }
-
-        /* Ensure all media (videos and images) have the same size */
-        .news-thumb {
-            width: 100%;
-            height: 250px;
-            /* Reduced height for all media */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            margin-bottom: 15px;
-            /* Space between each box */
-        }
-
-        .news-thumb video,
-        .news-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Ensures the media scales properly */
-        }
-
-        /* Optional: Adjust the layout for the images/videos in smaller screens */
-        .news-two-column {
-            margin-bottom: 15px;
-        }
-
-        /* Optional: Adjust the hover effect styles */
-        .news-image-hover {
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        .news-image-hover-success {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .news-image-hover-warning {
-            background: rgba(255, 255, 0, 0.3);
-        }
-
-        /* Optional: Add a margin for the columns */
-        .news-thumb+.news-thumb {
-            margin-top: 15px;
-            /* Space between video/image blocks */
-        }
-
-        .section-padding {
-            padding-top: 30px !important;
-            padding-bottom: 30px !important;
+        /* Remove background for navbar links when menu is open */
+        .hero.no-navbar-background .navbar-nav .nav-item .nav-link {
+            background: transparent !important;
+            /* Ensuring transparent background on open */
         }
     </style>
 
@@ -338,42 +185,46 @@
             <div class="navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#hero">Home</a>
+                        <a class="nav-link" href="#hero"
+                            style="background: transparent !important; color: #fff !important;">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">services</a>
+                        <a class="nav-link" href="#portfolio"
+                            style="background: transparent !important; color: #fff !important;">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#about"
+                            style="background: transparent !important; color: #fff !important;">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#news">Credits</a>
+                        <a class="nav-link" href="#news"
+                            style="background: transparent !important; color: #fff !important;">Credits</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact Me</a>
+                        <a class="nav-link" href="#contact"
+                            style="background: transparent !important; color: #fff !important;">Contact Me</a>
                     </li>
                 </ul>
             </div>
 
+            <!-- Hero Text -->
             <div class="heroText">
                 <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
                     Neo Audio Art
                 </h1>
-
-                <!-- 
-                <p class="text-white" data-aos="fade-up" data-aos-delay="1000">
-                    <strong><b class="text-white custom-underline">Bringing Cinematic Sounds To Life</b></strong>
-                </p>
-                 -->
-
             </div>
 
-            <div class="imageWrapper">
-                <div class="image" style="background-image: url('neo/3.jpeg');"></div>
+            <div class="imageWrapper" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+                <video class="image" autoplay loop muted playsinline>
+                    <source src="video/TrialVideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
             <div class="overlay"></div>
         </section>
+
+
 
         <nav class="navbar navbar-expand-lg bg-light shadow-lg" style="position: absolute; width: 100%;">
             <div class="container d-flex justify-content-center text-center">
@@ -481,12 +332,11 @@
         </section>
 
         <div class="text-center">
-            <a class="btn btn-success text-decoration-none px-5 d-block mx-auto text-center" 
-               style="width: 70%;" 
-               href="mailto:NeoAudioArt@gmail.com">
-               Request a Quote
+            <a class="btn btn-success text-decoration-none px-5 d-block mx-auto text-center" style="width: 70%;"
+                href="mailto:NeoAudioArt@gmail.com">
+                Request a Quote
             </a>
-        </div>        
+        </div>
 
         <section class="section-padding" id="about">
             <div class="container mb-3 pb-0"> <!-- Reduced margin-bottom -->
@@ -494,8 +344,9 @@
                     <div class="col-12 text-center">
                         <h2 class="mb-3" data-aos="fade-up">About Me..</h2>
                     </div>
-                    
-                    <img style="width: 88%;display: block;margin-left: auto;margin-right: auto;" src="neo/Myself.jpeg" alt="Your browser does not support this picture" width="50px">
+
+                    <img style="width: 88%;display: block;margin-left: auto;margin-right: auto;" src="neo/Myself.jpeg"
+                        alt="Your browser does not support this picture" width="50px">
 
                     <div class="col-lg-6 col-12 mt-3 mb-lg-5">
                         <p class="me-4" data-aos="fade-up" data-aos-delay="300"
@@ -760,21 +611,38 @@
         $(document).ready(function () {
             var $menuIcon = $('#menu-icon');
             var $navMenu = $('#navbarNav');
+            var $hero = $('.hero');
+            var $heroText = $('.heroText');
+            var $element = $('.element');  // Target the element you want to style
 
             $menuIcon.click(function () {
-                if ($navMenu.hasClass('show')) {
-                    $navMenu.removeClass('show');
-                } else {
-                    $navMenu.addClass('show');
-                }
+                $navMenu.toggleClass('show');
+                $hero.toggleClass('no-background');
+                $heroText.toggleClass('hidden');
+                $hero.toggleClass('no-navbar-background');
+
+                // Apply background and opacity to .element when the menu is clicked
+                $element.css({
+                    "background-color": "transparent",
+                    "opacity": "0.5"
+                });
             });
 
+            // Reset styles when any nav link is clicked
             $(".nav-link").click(function () {
                 $navMenu.removeClass("show");
+
+                // Reset .element styles when a nav link is clicked
+                $element.css({
+                    "background-color": "",
+                    "opacity": ""
+                });
             });
         });
-
     </script>
+
+
+
 </body>
 
 </html>
