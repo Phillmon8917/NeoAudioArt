@@ -18,7 +18,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap"
         rel="stylesheet">
-
+    <!-- Add the Google Font link for Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.css" rel="stylesheet">
 
@@ -28,8 +29,7 @@
 
     <link href="css/templatemo-nomad-force.css" rel="stylesheet">
     <style>
-        /* General Hero Section Styling */
-        .hero {
+        <style>.hero {
             position: relative;
             z-index: 1;
             height: 100vh;
@@ -38,7 +38,6 @@
             transition: background-color 0.3s ease;
         }
 
-        /* Center the text vertically and horizontally */
         .heroText {
             position: absolute;
             top: 50%;
@@ -50,21 +49,18 @@
             transition: opacity 0.3s ease;
         }
 
-        /* Styling for the h1 text */
         .heroText h1 {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-        /* Styling for the paragraph text */
         .heroText p {
             color: #d3d3d3;
             font-size: 1.2rem;
             opacity: 1;
         }
 
-        /* Hero Background Image Styling */
         .imageWrapper {
             position: absolute;
             top: 0;
@@ -84,7 +80,6 @@
             transform: translate(-50%, -50%);
         }
 
-        /* Overlay Styling */
         .overlay {
             position: absolute;
             top: 0;
@@ -93,11 +88,9 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 0;
-            /* Ensuring overlay stays behind text and navbar */
             pointer-events: none;
         }
 
-        /* Navbar Styles */
         .navbar-toggler {
             position: absolute;
             top: 20px;
@@ -114,7 +107,6 @@
             display: block;
         }
 
-        /* Navbar Link Styling */
         .navbar-nav {
             margin-left: auto;
             margin-right: auto;
@@ -130,7 +122,6 @@
         .nav-item .nav-link {
             color: #999999;
             background: transparent;
-            /* Ensuring navbar link background is transparent */
             padding: 10px 20px;
             transition: color 0.3s ease, background-color 0.3s ease;
         }
@@ -140,7 +131,6 @@
             color: #ffffff;
         }
 
-        /* Media Query for smaller screens */
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
@@ -159,17 +149,23 @@
             }
         }
 
-        /* Fix for when menu is open: Hide hero text */
         .hero.no-background .heroText {
             opacity: 0;
         }
 
-        /* Remove background for navbar links when menu is open */
         .hero.no-navbar-background .navbar-nav .nav-item .nav-link {
             background: transparent !important;
-            /* Ensuring transparent background on open */
+        }
+
+        /* Updated to make navbar behave normally */
+        .navbar {
+            position: relative !important;
+            /* Changed from 'fixed' to 'relative' to make it scroll with the page */
+            width: 100%;
+            top: auto;
         }
     </style>
+
 
 <body>
 
@@ -345,26 +341,37 @@
                         <h2 class="mb-3" data-aos="fade-up">About Me..</h2>
                     </div>
 
-                    <img style="width: 88%;display: block;margin-left: auto;margin-right: auto;" src="neo/Myself.jpeg"
+                    <img style="width: 50%;display: block;margin-left: auto;margin-right: auto;" src="neo/Myself.jpeg"
                         alt="Your browser does not support this picture" width="50px">
 
-                    <div class="col-lg-6 col-12 mt-3 mb-lg-5">
-                        <p class="me-4" data-aos="fade-up" data-aos-delay="300"
-                            style="font-size: 16px; line-height: 1.6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">
-                            As a Sound Engineer, Music Composer, and Filmmaker, Neo has been perfecting his craft since
-                            2013. He began his journey with music composition, followed by formal studies in Sound
-                            Engineering and Music Production at Southwest Media College. Neo's professional experience
-                            includes working as a Technical Assistant Producer at Radio Turf, University of Limpopo.
-                        </p>
+                    <div class="container"
+                        style="display: flex; justify-content: center; align-items: flex-start; padding: 40px 20px;">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-md-10 col-12 mt-3 mb-lg-5"
+                                style="background-color: #f9f9f9; border-radius: 8px; padding: 30px;">
+                                <p class="me-4" data-aos="fade-up" data-aos-delay="300"
+                                    style="font-size: 18px; line-height: 1.8; font-family: 'Roboto', sans-serif !important; color: #333; margin-bottom: 20px; text-align: justify;">
+                                    As a Sound Engineer, Music Composer, and Filmmaker, Neo has been perfecting his
+                                    craft since 2013.
+                                    He began his journey with music composition, followed by formal studies in Sound
+                                    Engineering and
+                                    Music Production at Southwest Media College. Neo's professional experience includes
+                                    working as a
+                                    Technical Assistant Producer at Radio Turf, University of Limpopo.
+                                </p>
 
-                        <p class="me-4" data-aos="fade-up" data-aos-delay="300"
-                            style="font-size: 16px; line-height: 1.6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">
-                            He later pursued an NQF5 qualification in Film and TV Production at Bolobathaba Media Group,
-                            where he gained extensive experience in Audio Post-Production. Neo's impressive portfolio
-                            includes work on documentaries such as "Always & Otherwise", "Street Snappers", "Hung Out
-                            Dry", "Six Kings and Six Queens", and various other documentaries and short films.
-                        </p>
-
+                                <p class="me-4" data-aos="fade-up" data-aos-delay="300"
+                                    style="font-size: 18px; line-height: 1.8; font-family: 'Roboto', sans-serif !important; color: #333; text-align: justify;">
+                                    He later pursued an NQF5 qualification in Film and TV Production at Bolobathaba
+                                    Media Group, where
+                                    he gained extensive experience in Audio Post-Production. Neo's impressive portfolio
+                                    includes work
+                                    on documentaries such as "Always & Otherwise", "Street Snappers", "Hung Out Dry",
+                                    "Six Kings and
+                                    Six Queens", and various other documentaries and short films.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     <section class="news section-padding" id="news">
