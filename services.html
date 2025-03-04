@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="Neo Rapudubudu">
+    <meta name="Developer" content="Motsinoni Phillimon">
+
+    <title>Neo Audio Art</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Add the Google Font link for Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link href="css/aos.css" rel="stylesheet">
+
+    <link href="css/templatemo-nomad-force.css" rel="stylesheet">
+    <style>
+        .hero {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+            background-size: cover;
+            background-position: center center;
+            transition: background-color 0.3s ease;
+        }
+
+        .heroText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .heroText h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .heroText p {
+            color: #d3d3d3;
+            font-size: 1.2rem;
+            opacity: 1;
+        }
+
+        .imageWrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .imageWrapper video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .navbar-toggler {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1101;
+        }
+
+        .navbar-collapse {
+            z-index: 1100;
+            display: none;
+        }
+
+        .navbar-collapse.show {
+            display: block;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            position: relative;
+            z-index: 1100;
+        }
+
+        .nav-item.active .nav-link {
+            color: #ffffff;
+        }
+
+        .nav-item .nav-link {
+            color: #999999;
+            background: transparent;
+            padding: 10px 20px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-item .nav-link:hover,
+        .nav-item .nav-link:focus {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+            }
+
+            .heroText h1 {
+                font-size: 2.5rem;
+            }
+
+            .heroText p {
+                font-size: 1.1rem;
+            }
+
+            .imageWrapper video {
+                height: 100vh;
+            }
+        }
+
+        .hero.no-background .heroText {
+            opacity: 0;
+        }
+
+        .hero.no-navbar-background .navbar-nav .nav-item .nav-link {
+            background: transparent !important;
+        }
+
+        /* Updated to make navbar behave normally */
+        .navbar {
+            position: relative !important;
+            /* Changed from 'fixed' to 'relative' to make it scroll with the page */
+            width: 100%;
+            top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg" style="position: absolute; width: 100%;">
+        <div class="container d-flex justify-content-center text-center">
+            <a class="navbar-brand text-dark w-100" href="index.html" style="display: block;">
+                <h6 class="p-2" style="font-style: italic; text-align: center; white-space: normal;">
+                    Bringing Cinematic Sound to Life.
+                </h6>
+                <p style="font-size: 16px; line-height: 1.6; font-family: 'Arial', sans-serif; color: #333; 
+                          word-wrap: break-word; white-space: normal; max-width: 90%; margin: 0 auto;">
+                    As a dedicated audio professional, I help filmmakers <br> bring their creative vision to life.
+                    With expertise in:
+                </p>
+            </a>
+        </div>
+    </nav>
+
+    <section class="section-padding" id="portfolio">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <h2 class="mb-5 text-center" data-aos="fade-up"></h2>
+                </div>
+
+                <div class="portfolio-thumb" data-aos="fade-up">
+                    <div class="portfolio-info">
+                        <h4 class="portfolio-title mb-0 text-center">Dialogue Editing</h4>
+
+                        <a href="neo/4.jpeg" class="image-popup p-3">
+                            <img src="neo/4.jpeg" class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <ul>
+                            <li>Remove unwanted noises and breaths</li>
+                            <li>Correct sync issues and lip movements</li>
+                            <li>Enhance clarity</li>
+                            <li>Create a polished, professional dialogue sound</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-6 col-12">
+                <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                    <div class="portfolio-info">
+                        <h4 class="portfolio-title mb-0 text-center">Sound Design</h4>
+
+                        <a href="neo/5.jpeg" class="image-popup p-3">
+                            <img src="neo/5.jpeg" class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <ul>
+                            <li>Create immersive soundscapes and atmospheres</li>
+                            <li>Design and edit sound effects to enhance visuals</li>
+                            <li>Craft realistic Foley effects for added authenticity</li>
+                            <li>Mix and balance sound elements for a cohesive experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="portfolio-thumb" data-aos="fade-up">
+                    <div class="portfolio-info">
+                        <h4 class="portfolio-title mb-0 text-center">Music Composition</h4>
+
+                        <a href="neo/7.jpeg" class="image-popup p-3">
+                            <img src="neo/7.jpeg" class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <ul>
+                            <li>Craft original music scores to elevate your narrative</li>
+                            <li>Create emotive and engaging themes</li>
+                            <li>Arrange and produce music to fit your film's tone and style</li>
+                            <li>Deliver high-quality music that's ready for your film</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="portfolio-thumb mb-5" data-aos="fade-up">
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0 text-center">Final Mixing</h4>
+
+                            <a href="neo/2.jpeg" class="image-popup p-3">
+                                <img src="neo/2.jpeg" class="img-fluid portfolio-image" alt="">
+                            </a>
+
+                            <ul>
+                                <li>Balance audio elements for a cohesive mix</li>
+                                <li>Adjust levels, EQ, and compression for optimal sound</li>
+                                <li>Create a polished, professional final product</li>
+                                <li>Ensure your film sounds great on various playback systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="font-size: 16px; line-height: 1.6; font-family: 'Arial', sans-serif; color: #333;"><b>I
+                        ensure that your time, hard work and energy result in the film you envision.</b></p>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center mb-5">
+        <a class="btn btn-success text-decoration-none px-5 d-block mx-auto text-center" style="width: 70%;"
+            href="mailto:NeoAudioArt@gmail.com">
+            Request a Quote
+        </a>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <h5 class="text-white">
+                        <i class="bi-geo-alt-fill me-2"></i>
+                        Mothobekhi Village Ga-Kgapane 0838
+                    </h5>
+
+                    <a href="mailto:info@company.com" class="custom-link mt-3 mb-5">
+                        NeoAudioArt@gmail.com
+                    </a>
+                </div>
+
+                <div class="col-6">
+                    <div class="copyright-text mb-0">Copyright © (Observed)</div>
+                </div>
+
+                <div class="col-lg-3 col-5 ms-auto">
+                    <ul class="social-icon">
+                        <li><a href="https://www.facebook.com/DangerLeyoza" class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li>
+                            <a href="https://wa.me/27720692072" class="social-icon-link bi-whatsapp"
+                                target="_blank"></a>
+                        </li>
+
+
+                        <li><a href="https://www.instagram.com/neo_audio_art" class="social-icon-link bi-instagram"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            </section>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+    <script src="js/scrollspy.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts for AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function () {
+            var $menuIcon = $('#menu-icon');
+            var $navMenu = $('#navbarNav');
+            var $hero = $('.hero');
+            var $heroText = $('.heroText');
+            var $element = $('.element');  // Target the element you want to style
+
+            $menuIcon.click(function () {
+                $navMenu.toggleClass('show');
+                $hero.toggleClass('no-background');
+                $heroText.toggleClass('hidden');
+                $hero.toggleClass('no-navbar-background');
+
+                // Apply background and opacity to .element when the menu is clicked
+                $element.css({
+                    "background-color": "transparent",
+                    "opacity": "0.5"
+                });
+            });
+
+            // Reset styles when any nav link is clicked
+            $(".nav-link").click(function () {
+                $navMenu.removeClass("show");
+
+                // Reset .element styles when a nav link is clicked
+                $element.css({
+                    "background-color": "",
+                    "opacity": ""
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
