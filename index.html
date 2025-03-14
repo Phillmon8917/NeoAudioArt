@@ -29,6 +29,7 @@
 
     <link href="css/templatemo-nomad-force.css" rel="stylesheet">
     <style>
+        /* Hero Section */
         .hero {
             position: relative;
             z-index: 1;
@@ -91,6 +92,13 @@
             pointer-events: none;
         }
 
+        /* Navbar */
+        .navbar {
+            position: relative !important;
+            width: 100%;
+            top: auto;
+        }
+
         .navbar-toggler {
             position: absolute;
             top: 20px;
@@ -131,6 +139,27 @@
             color: #ffffff;
         }
 
+        /* Portfolio section */
+        .portfolio-thumb {
+            margin-bottom: 30px;
+        }
+
+        .portfolio-info {
+            text-align: center;
+        }
+
+        .portfolio-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .portfolio-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Media Queries */
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
@@ -147,22 +176,39 @@
             .imageWrapper video {
                 height: 100vh;
             }
+
+            .navbar-toggler {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .portfolio-thumb {
+                flex-basis: 100%;
+            }
+
+            .portfolio-info {
+                padding: 15px;
+            }
+
+            .portfolio-title {
+                font-size: 1.3rem;
+            }
         }
 
-        .hero.no-background .heroText {
-            opacity: 0;
-        }
+        @media (min-width: 769px) {
+            .portfolio-thumb {
+                flex-basis: 48%;
+                margin: 10px;
+            }
 
-        .hero.no-navbar-background .navbar-nav .nav-item .nav-link {
-            background: transparent !important;
-        }
+            .portfolio-info {
+                padding: 20px;
+            }
 
-        /* Updated to make navbar behave normally */
-        .navbar {
-            position: relative !important;
-            /* Changed from 'fixed' to 'relative' to make it scroll with the page */
-            width: 100%;
-            top: auto;
+            .portfolio-title {
+                font-size: 1.7rem;
+            }
         }
     </style>
 </head>
@@ -231,49 +277,357 @@
                     <p style="font-size: 16px; line-height: 1.6; font-family: 'Arial', sans-serif; color: #333; 
                               word-wrap: break-word; white-space: normal; max-width: 90%; margin: 0 auto;">
                         As a dedicated audio professional, I help filmmakers <br> bring their creative vision to life.
+                        With expertise in:
                     </p>
                 </a>
             </div>
         </nav>
-        <footer class="site-footer">
+
+        <section class="section-padding" id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="mb-5 text-center" data-aos="fade-up"></h2>
+                    </div>
+    
+                    <div class="col-lg-6 col-12">
+                        <div class="portfolio-thumb" data-aos="fade-up">
+                            <div class="portfolio-info">
+                                <h4 class="portfolio-title mb-0 text-center">Dialogue Editing</h4>
+                                <a href="neo/4.jpeg" class="image-popup p-3">
+                                    <img src="neo/4.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+                                <ul>
+                                    <li>Remove unwanted noises and breaths</li>
+                                    <li>Correct sync issues and lip movements</li>
+                                    <li>Enhance clarity</li>
+                                    <li>Create a polished, professional dialogue sound</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-6 col-12">
+                        <div class="portfolio-thumb" data-aos="fade-up">
+                            <div class="portfolio-info">
+                                <h4 class="portfolio-title mb-0 text-center">Sound Design</h4>
+                                <a href="neo/5.jpeg" class="image-popup p-3">
+                                    <img src="neo/5.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+                                <ul>
+                                    <li>Create immersive soundscapes and atmospheres</li>
+                                    <li>Design and edit sound effects to enhance visuals</li>
+                                    <li>Craft realistic Foley effects for added authenticity</li>
+                                    <li>Mix and balance sound elements for a cohesive experience</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-6 col-12">
+                        <div class="portfolio-thumb" data-aos="fade-up">
+                            <div class="portfolio-info">
+                                <h4 class="portfolio-title mb-0 text-center">Music Composition</h4>
+                                <a href="neo/7.jpeg" class="image-popup p-3">
+                                    <img src="neo/7.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+                                <ul>
+                                    <li>Craft original music scores to elevate your narrative</li>
+                                    <li>Create emotive and engaging themes</li>
+                                    <li>Arrange and produce music to fit your film's tone and style</li>
+                                    <li>Deliver high-quality music that's ready for your film</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-6 col-12">
+                        <div class="portfolio-thumb" data-aos="fade-up">
+                            <div class="portfolio-info">
+                                <h4 class="portfolio-title mb-0 text-center">Final Mixing</h4>
+                                <a href="neo/2.jpeg" class="image-popup p-3">
+                                    <img src="neo/2.jpeg" class="img-fluid portfolio-image" alt="">
+                                </a>
+                                <ul>
+                                    <li>Balance audio elements for a cohesive mix</li>
+                                    <li>Adjust levels, EQ, and compression for optimal sound</li>
+                                    <li>Create a polished, professional final product</li>
+                                    <li>Ensure your film sounds great on various playback systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <p style="font-size: 16px; line-height: 1.6; font-family: 'Arial', sans-serif; color: #333;">
+                        <b>I ensure that your time, hard work, and energy result in the film you envision.</b>
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Request Quote Button -->
+        <div class="text-center mb-5">
+            <a class="btn btn-success text-decoration-none px-5 d-block mx-auto text-center" style="width: 70%;"
+                href="mailto:NeoAudioArt@gmail.com">
+                Request a Quote
+            </a>
+        </div>
+
+        <section class="section-padding" id="about">
+            <div class="container mb-3 pb-0"> <!-- Reduced margin-bottom -->
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="mb-3" data-aos="fade-up">About Me</h2>
+                    </div>
+                    <!--  
+                        <img style="width: 50%;display: block;margin-left: auto;margin-right: auto;" src="neo/Myself.jpeg"
+                            alt="Your browser does not support this picture" width="50px">
+                        -->
+
+
+                    <div class="container"
+                        style="display: flex; justify-content: center; align-items: flex-start; padding: 40px 20px;">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-md-10 col-12 mt-3 mb-lg-5"
+                                style="background-color: #f9f9f9; border-radius: 8px; padding: 30px;">
+                                <p class="me-4" data-aos="fade-up" data-aos-delay="300"
+                                    style="font-size: 18px; line-height: 1.8; font-family: 'Roboto', sans-serif !important; color: #333; margin-bottom: 20px; text-align: justify;">
+                                    As a Sound Engineer, Music Composer, and Filmmaker, Neo has been perfecting his
+                                    craft since 2013.
+                                    He began his journey with music composition, followed by formal studies in Sound
+                                    Engineering and
+                                    Music Production at Southwest Media College. Neo's professional experience includes
+                                    working as a
+                                    Technical Assistant Producer at Radio Turf, University of Limpopo.
+                                </p>
+
+                                <p class="me-4" data-aos="fade-up" data-aos-delay="300"
+                                    style="font-size: 18px; line-height: 1.8; font-family: 'Roboto', sans-serif !important; color: #333; text-align: justify;">
+                                    He later pursued an NQF5 qualification in Film and TV Production at Bolobathaba
+                                    Media Group, where
+                                    he gained extensive experience in Audio Post-Production. Neo's impressive portfolio
+                                    includes work
+                                    on documentaries such as "Always & Otherwise", "Street Snappers", "Hung Out Dry",
+                                    "Six Kings and
+                                    Six Queens", and various other documentaries and short films.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news section-padding" id="news">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">
+                        <h2 class="mb-5 text-center" data-aos="fade-up">Credits</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <div class="news-thumb" data-aos="fade-up">
+                            <a href="https://drive.google.com/file/d/1cybub9qX3Jcc62tq5lk4rr58UEH9DB8-/view?usp=sharing"
+                                class="news-image-hover news-image-hover-warning">
+                                <video muted controls>
+                                    <source
+                                        src="https://drive.google.com/file/d/1om0qcNc5yo60NrSCMtnB0YniFcgbBVfi/view?usp=sharing"
+                                        type="video/mp4" class="img-fluid large-news-image news-image">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                        </div>
+                        <div class="news-top w-100" data-aos="fade-up">
+                            <a href="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                class="news-image-hover news-image-hover-success">
+                                <video muted controls style="width: 100%; height: auto;">
+                                    <source
+                                        src="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                        type="video/mp4" class="img-fluid news-image">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Other videos/images remain unchanged -->
+                    <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
+                        <div class="news-top w-100" data-aos="fade-up">
+                            <a href="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                class="news-image-hover news-image-hover-success">
+                                <video muted controls style="width: 100%; height: auto;">
+                                    <source
+                                        src="https://drive.google.com/file/d/188Ntr7xCvDzUBJDXVDZwX0QldTW6X5Rk/view?usp=sharing"
+                                        type="video/mp4" class="img-fluid news-image">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Image boxes remain unchanged -->
+                    <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
+                        <div class="news-top w-100" data-aos="fade-up">
+                            <a href="#" class="news-image-hover news-image-hover-success">
+                                <img class="img-fluid news-image" src="neo/6.jpeg" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
+                        <div class="news-top w-100" data-aos="fade-up">
+                            <a href="#" class="news-image-hover news-image-hover-success">
+                                <img class="img-fluid news-image" src="neo/8.jpeg" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
+                        <div class="news-top w-100" data-aos="fade-up">
+                            <a href="#" class="news-image-hover news-image-hover-success">
+                                <img class="img-fluid news-image" src="neo/9.jpeg" />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class=" contact section-padding" id="contact">
             <div class="container">
                 <div class="row">
     
+                    <div class="col-lg-7 col-12 mx-auto">
+    
+                        <h2 class="mb-4 text-center" data-aos="fade-up"><a class="text-dark text-decoration-none" href="index.html">Got a project in mind? Let's talk!</a>
+                        </h2>
+    
+                        <form action="sendMeesage.php" method="post" class="contact-form" role="form" data-aos="fade-up">
+    
+                            <div class="row">
+    
+                                <div class="col-lg-6 col-6">
+                                    <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>
+    
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Full name"
+                                        required>
+                                </div>
+    
+                                <div class="col-lg-6 col-6">
+                                    <label for="email" class="form-label">Email <sup class="text-danger">*</sup></label>
+    
+                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"
+                                        placeholder="Email address" required>
+                                </div>
+    
+                                <div class="col-12 my-4">
+                                    <label for="message" class="form-label">How can I help?</label>
+    
+                                    <textarea name="message" rows="6" class="form-control" id="message"
+                                        placeholder="Brief description of the project" required></textarea>
+    
+                                </div>
+    
+                                <div class="col-12">
+                                    <label for="services" class="form-label">Subject<sup class="text-danger">*</sup></label>
+                                </div>
+    
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="checkbox1" name="checkbox1" class="form-check-input">
+    
+                                        <label class="form-check-label" for="checkbox1">Dialogue
+                                            Editing</label>
+                                    </div>
+                                </div>
+    
+                                <div class="col-lg-4 col-12 my-2 my-lg-0">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="checkbox2" name="checkbox2" class="form-check-input">
+    
+                                        <label class="form-check-label" for="checkbox2">Sound Design</label>
+                                    </div>
+                                </div>
+    
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="checkbox3" name="checkbox3" class="form-check-input">
+    
+                                        <label class="form-check-label" for="checkbox3">Music
+                                            Composition</label>
+                                    </div>
+                                </div>
+    
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="checkbox4" name="checkbox4" class="form-check-input">
+    
+                                        <label class="form-check-label" for="checkbox3">Final Mixing</label>
+                                    </div>
+                                </div>
+    
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="checkbox5" name="checkbox5" class="form-check-input">
+    
+                                        <label class="form-check-label" for="checkbox3">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-lg-5 col-12 mx-auto mt-5">
+                                <button type="submit" class="form-control">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
                     <div class="col-12">
                         <h5 class="text-white">
                             <i class="bi-geo-alt-fill me-2"></i>
                             Mothobekhi Village Ga-Kgapane 0838
                         </h5>
-    
+
                         <a href="mailto:info@company.com" class="custom-link mt-3 mb-5">
                             NeoAudioArt@gmail.com
                         </a>
                     </div>
-    
+
                     <div class="col-6">
                         <div class="copyright-text mb-0">Copyright © (Observed)</div>
                     </div>
-    
+
                     <div class="col-lg-3 col-5 ms-auto">
                         <ul class="social-icon">
-                            <li><a href="https://www.facebook.com/DangerLeyoza" class="social-icon-link bi-facebook"></a>
+                            <li><a href="https://www.facebook.com/DangerLeyoza"
+                                    class="social-icon-link bi-facebook"></a>
                             </li>
-    
+
                             <li>
                                 <a href="https://wa.me/27720692072" class="social-icon-link bi-whatsapp"
                                     target="_blank"></a>
                             </li>
-    
-    
-                            <li><a href="https://www.instagram.com/neo_audio_art" class="social-icon-link bi-instagram"></a>
+
+
+                            <li><a href="https://www.instagram.com/neo_audio_art"
+                                    class="social-icon-link bi-instagram"></a>
                             </li>
                         </ul>
                     </div>
-    
+
                 </div>
                 </section>
         </footer>
-    
+
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
@@ -294,24 +648,24 @@
                 var $hero = $('.hero');
                 var $heroText = $('.heroText');
                 var $element = $('.element');  // Target the element you want to style
-    
+
                 $menuIcon.click(function () {
                     $navMenu.toggleClass('show');
                     $hero.toggleClass('no-background');
                     $heroText.toggleClass('hidden');
                     $hero.toggleClass('no-navbar-background');
-    
+
                     // Apply background and opacity to .element when the menu is clicked
                     $element.css({
                         "background-color": "transparent",
                         "opacity": "0.5"
                     });
                 });
-    
+
                 // Reset styles when any nav link is clicked
                 $(".nav-link").click(function () {
                     $navMenu.removeClass("show");
-    
+
                     // Reset .element styles when a nav link is clicked
                     $element.css({
                         "background-color": "",
@@ -319,6 +673,7 @@
                     });
                 });
             });
-        </script>    
+        </script>
 </body>
+
 </html>
