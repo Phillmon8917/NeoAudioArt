@@ -29,7 +29,6 @@
 
     <link href="css/templatemo-nomad-force.css" rel="stylesheet">
     <style>
-        /* Hero Section */
         .hero {
             position: relative;
             z-index: 1;
@@ -38,7 +37,7 @@
             background-position: center center;
             transition: background-color 0.3s ease;
         }
-
+    
         .heroText {
             position: absolute;
             top: 50%;
@@ -49,29 +48,50 @@
             color: white;
             transition: opacity 0.3s ease;
         }
-
+    
         .heroText h1 {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
-
+    
         .heroText p {
             color: #d3d3d3;
             font-size: 1.2rem;
             opacity: 1;
         }
-
+    
+        .heroText .styled-underline {
+            font-weight: bold;
+            font-size: 0.9rem;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    
+        .heroText .styled-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+    
         .imageWrapper {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
+            overflow: hidden;
             z-index: -1;
         }
-
-        .imageWrapper video {
+    
+        .imageWrapper img {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -80,7 +100,7 @@
             object-fit: cover;
             transform: translate(-50%, -50%);
         }
-
+    
         .overlay {
             position: absolute;
             top: 0;
@@ -91,30 +111,29 @@
             z-index: 0;
             pointer-events: none;
         }
-
-        /* Navbar */
+    
         .navbar {
             position: relative !important;
             width: 100%;
             top: auto;
         }
-
+    
         .navbar-toggler {
             position: absolute;
             top: 20px;
             right: 20px;
             z-index: 1101;
         }
-
+    
         .navbar-collapse {
             z-index: 1100;
             display: none;
         }
-
+    
         .navbar-collapse.show {
             display: block;
         }
-
+    
         .navbar-nav {
             margin-left: auto;
             margin-right: auto;
@@ -122,108 +141,103 @@
             position: relative;
             z-index: 1100;
         }
-
+    
         .nav-item.active .nav-link {
             color: #ffffff;
         }
-
+    
         .nav-item .nav-link {
             color: #999999;
             background: transparent;
             padding: 10px 20px;
             transition: color 0.3s ease, background-color 0.3s ease;
         }
-
+    
         .nav-item .nav-link:hover,
         .nav-item .nav-link:focus {
             color: #ffffff;
         }
-
-        /* Portfolio section */
+    
         .portfolio-thumb {
             margin-bottom: 30px;
         }
-
+    
         .portfolio-info {
             text-align: center;
         }
-
+    
         .portfolio-title {
             font-size: 1.5rem;
             font-weight: bold;
         }
-
+    
         .portfolio-image {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
         }
-
-        /* Media Queries */
+    
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
             }
-
+    
             .heroText h1 {
                 font-size: 2.5rem;
             }
-
+    
             .heroText p {
                 font-size: 1.1rem;
             }
-
+    
             .imageWrapper video {
                 height: 100vh;
             }
-
+    
             .navbar-toggler {
                 position: absolute;
                 top: 20px;
                 right: 20px;
             }
-
+    
             .portfolio-thumb {
                 flex-basis: 100%;
             }
-
+    
             .portfolio-info {
                 padding: 15px;
             }
-
+    
             .portfolio-title {
                 font-size: 1.3rem;
             }
         }
-
+    
         @media (min-width: 769px) {
             .portfolio-thumb {
                 flex-basis: 48%;
                 margin: 10px;
             }
-
+    
             .portfolio-info {
                 padding: 20px;
             }
-
+    
             .portfolio-title {
                 font-size: 1.7rem;
             }
         }
     </style>
+    
 </head>
 
 <body>
     <main>
-        <!-- Hero Section -->
         <section class="hero" id="hero">
-            <!-- Hamburger icon for mobile -->
             <button class="navbar-toggler" id="menu-icon" type="button" aria-label="Toggle navigation"
                 style="background-color: white;">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navigation items -->
             <div class="navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item active">
@@ -249,18 +263,23 @@
                 </ul>
             </div>
 
-            <!-- Hero Text -->
             <div class="heroText">
                 <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
                     Neo Audio Art
                 </h1>
+                <p class="text-white styled-underline">
+                    Where audio meets art
+                </p>
             </div>
 
             <div class="imageWrapper" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
-                <video class="image" autoplay loop muted playsinline>
+                <!-- <video class="image" autoplay loop muted playsinline>
                     <source src="video/TrialVideo.mp4" type="video/mp4">
                     Your browser does not support the video tag.
-                </video>
+                </video>-->
+                <div class="imageWrapper" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+                    <img class="image" src="neo/BackgroundImag1.jpeg" alt="Your browser does not support this picture">
+                </div>                
             </div>
 
             <div class="overlay"></div>
@@ -358,9 +377,11 @@
                         </div>
                     </div>
     
-                    <p style="font-size: 16px; line-height: 1.6; font-family: 'Arial', sans-serif; color: #333;">
+                    <p style="font-size: 16px; line-height: 1.6; font-family: 'Arial', sans-serif; color: #333; text-align: center; padding-left: 40px;
+                     padding-right: 40px;">
                         <b>I ensure that your time, hard work, and energy result in the film you envision.</b>
                     </p>
+                    
                 </div>
             </div>
         </section>
