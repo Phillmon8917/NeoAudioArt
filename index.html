@@ -37,7 +37,7 @@
             background-position: center center;
             transition: background-color 0.3s ease;
         }
-    
+
         .heroText {
             position: absolute;
             top: 50%;
@@ -48,19 +48,19 @@
             color: white;
             transition: opacity 0.3s ease;
         }
-    
+
         .heroText h1 {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
-    
+
         .heroText p {
             color: #d3d3d3;
             font-size: 1.2rem;
             opacity: 1;
         }
-    
+
         .heroText .styled-underline {
             font-weight: bold;
             font-size: 0.9rem;
@@ -69,7 +69,7 @@
             text-transform: uppercase;
             color: #fff;
         }
-    
+
         .heroText .styled-underline::after {
             content: '';
             position: absolute;
@@ -80,7 +80,7 @@
             background-color: #fff;
             border-radius: 5px;
         }
-    
+
         .imageWrapper {
             position: absolute;
             top: 0;
@@ -90,7 +90,7 @@
             overflow: hidden;
             z-index: -1;
         }
-    
+
         .imageWrapper img {
             position: absolute;
             top: 50%;
@@ -100,7 +100,7 @@
             object-fit: cover;
             transform: translate(-50%, -50%);
         }
-    
+
         .overlay {
             position: absolute;
             top: 0;
@@ -111,29 +111,29 @@
             z-index: 0;
             pointer-events: none;
         }
-    
+
         .navbar {
             position: relative !important;
             width: 100%;
             top: auto;
         }
-    
+
         .navbar-toggler {
             position: absolute;
             top: 20px;
             right: 20px;
             z-index: 1101;
         }
-    
+
         .navbar-collapse {
             z-index: 1100;
             display: none;
         }
-    
+
         .navbar-collapse.show {
             display: block;
         }
-    
+
         .navbar-nav {
             margin-left: auto;
             margin-right: auto;
@@ -141,94 +141,98 @@
             position: relative;
             z-index: 1100;
         }
-    
+
         .nav-item.active .nav-link {
             color: #ffffff;
         }
-    
+
         .nav-item .nav-link {
             color: #999999;
             background: transparent;
             padding: 10px 20px;
             transition: color 0.3s ease, background-color 0.3s ease;
         }
-    
+
         .nav-item .nav-link:hover,
         .nav-item .nav-link:focus {
             color: #ffffff;
         }
-    
+
         .portfolio-thumb {
             margin-bottom: 30px;
         }
-    
+
         .portfolio-info {
             text-align: center;
         }
-    
+
         .portfolio-title {
             font-size: 1.5rem;
             font-weight: bold;
         }
-    
+
         .portfolio-image {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
         }
-    
+
         @media (max-width: 768px) {
             .hero {
                 height: 60vh;
             }
-    
+
             .heroText h1 {
                 font-size: 2.5rem;
             }
-    
+
             .heroText p {
                 font-size: 1.1rem;
             }
-    
+
             .imageWrapper video {
                 height: 100vh;
             }
-    
+
             .navbar-toggler {
                 position: absolute;
                 top: 20px;
                 right: 20px;
             }
-    
+
             .portfolio-thumb {
                 flex-basis: 100%;
             }
-    
+
             .portfolio-info {
                 padding: 15px;
             }
-    
+
             .portfolio-title {
                 font-size: 1.3rem;
             }
         }
-    
+
         @media (min-width: 769px) {
             .portfolio-thumb {
                 flex-basis: 48%;
                 margin: 10px;
             }
-    
+
             .portfolio-info {
                 padding: 20px;
             }
-    
+
             .portfolio-title {
                 font-size: 1.7rem;
             }
         }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
-    
+
 </head>
 
 <body>
@@ -279,7 +283,7 @@
                 </video>-->
                 <div class="imageWrapper" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
                     <img class="image" src="neo/BackgroundImag1.jpeg" alt="Your browser does not support this picture">
-                </div>                
+                </div>
             </div>
 
             <div class="overlay"></div>
@@ -308,7 +312,7 @@
                     <div class="col-12">
                         <h2 class="mb-5 text-center" data-aos="fade-up"></h2>
                     </div>
-    
+
                     <div class="col-lg-6 col-12">
                         <div class="portfolio-thumb" data-aos="fade-up">
                             <div class="portfolio-info">
@@ -325,7 +329,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-lg-6 col-12">
                         <div class="portfolio-thumb" data-aos="fade-up">
                             <div class="portfolio-info">
@@ -342,7 +346,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-lg-6 col-12">
                         <div class="portfolio-thumb" data-aos="fade-up">
                             <div class="portfolio-info">
@@ -359,7 +363,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-lg-6 col-12">
                         <div class="portfolio-thumb" data-aos="fade-up">
                             <div class="portfolio-info">
@@ -376,16 +380,16 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <p style="font-size: 16px; line-height: 1.6; font-family: 'Arial', sans-serif; color: #333; text-align: center; padding-left: 40px;
                      padding-right: 40px;">
                         <b>I ensure that your time, hard work, and energy result in the film you envision.</b>
                     </p>
-                    
+
                 </div>
             </div>
         </section>
-    
+
         <!-- Request Quote Button -->
         <div class="text-center mb-5">
             <a class="btn btn-success text-decoration-none px-5 d-block mx-auto text-center" style="width: 70%;"
@@ -519,91 +523,94 @@
         <section class=" contact section-padding" id="contact">
             <div class="container">
                 <div class="row">
-    
+
                     <div class="col-lg-7 col-12 mx-auto">
-    
-                        <h2 class="mb-4 text-center" data-aos="fade-up"><a class="text-dark text-decoration-none" href="index.html">Got a project in mind? Let's talk!</a>
+
+                        <h2 class="mb-4 text-center" data-aos="fade-up"><a class="text-dark text-decoration-none"
+                                href="index.html">Got a project in mind? Let's talk!</a>
                         </h2>
-    
-                        <form action="sendMeesage.php" method="post" class="contact-form" role="form" data-aos="fade-up">
-    
+
+                        <form action="sendMeesage.php" method="post" class="contact-form" role="form"
+                            data-aos="fade-up">
+
                             <div class="row">
-    
+
                                 <div class="col-lg-6 col-6">
                                     <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>
-    
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Full name"
-                                        required>
+
+                                    <input type="text" name="name" id="name" class="form-control"
+                                        placeholder="Full name" required>
                                 </div>
-    
+
                                 <div class="col-lg-6 col-6">
                                     <label for="email" class="form-label">Email <sup class="text-danger">*</sup></label>
-    
-                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"
-                                        placeholder="Email address" required>
+
+                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                        class="form-control" placeholder="Email address" required>
                                 </div>
-    
+
                                 <div class="col-12 my-4">
                                     <label for="message" class="form-label">How can I help?</label>
-    
+
                                     <textarea name="message" rows="6" class="form-control" id="message"
                                         placeholder="Brief description of the project" required></textarea>
-    
+
                                 </div>
-    
+
                                 <div class="col-12">
-                                    <label for="services" class="form-label">Subject<sup class="text-danger">*</sup></label>
+                                    <label for="services" class="form-label">Subject<sup
+                                            class="text-danger">*</sup></label>
                                 </div>
-    
+
                                 <div class="col-lg-4 col-12">
                                     <div class="form-check">
                                         <input type="checkbox" id="checkbox1" name="checkbox1" class="form-check-input">
-    
+
                                         <label class="form-check-label" for="checkbox1">Dialogue
                                             Editing</label>
                                     </div>
                                 </div>
-    
+
                                 <div class="col-lg-4 col-12 my-2 my-lg-0">
                                     <div class="form-check">
                                         <input type="checkbox" id="checkbox2" name="checkbox2" class="form-check-input">
-    
+
                                         <label class="form-check-label" for="checkbox2">Sound Design</label>
                                     </div>
                                 </div>
-    
+
                                 <div class="col-lg-4 col-12">
                                     <div class="form-check">
                                         <input type="checkbox" id="checkbox3" name="checkbox3" class="form-check-input">
-    
+
                                         <label class="form-check-label" for="checkbox3">Music
                                             Composition</label>
                                     </div>
                                 </div>
-    
+
                                 <div class="col-lg-4 col-12">
                                     <div class="form-check">
                                         <input type="checkbox" id="checkbox4" name="checkbox4" class="form-check-input">
-    
+
                                         <label class="form-check-label" for="checkbox3">Final Mixing</label>
                                     </div>
                                 </div>
-    
+
                                 <div class="col-lg-4 col-12">
                                     <div class="form-check">
                                         <input type="checkbox" id="checkbox5" name="checkbox5" class="form-check-input">
-    
+
                                         <label class="form-check-label" for="checkbox3">Other</label>
                                     </div>
                                 </div>
                             </div>
-    
+
                             <div class="col-lg-5 col-12 mx-auto mt-5">
                                 <button type="submit" class="form-control">Send Message</button>
                             </div>
                         </form>
                     </div>
-    
+
                 </div>
             </div>
         </section>
@@ -666,34 +673,19 @@
             $(document).ready(function () {
                 var $menuIcon = $('#menu-icon');
                 var $navMenu = $('#navbarNav');
-                var $hero = $('.hero');
                 var $heroText = $('.heroText');
-                var $element = $('.element');  // Target the element you want to style
 
                 $menuIcon.click(function () {
                     $navMenu.toggleClass('show');
-                    $hero.toggleClass('no-background');
                     $heroText.toggleClass('hidden');
-                    $hero.toggleClass('no-navbar-background');
-
-                    // Apply background and opacity to .element when the menu is clicked
-                    $element.css({
-                        "background-color": "transparent",
-                        "opacity": "0.5"
-                    });
                 });
 
-                // Reset styles when any nav link is clicked
                 $(".nav-link").click(function () {
                     $navMenu.removeClass("show");
-
-                    // Reset .element styles when a nav link is clicked
-                    $element.css({
-                        "background-color": "",
-                        "opacity": ""
-                    });
+                    $heroText.removeClass("hidden");
                 });
             });
+
         </script>
 </body>
 
